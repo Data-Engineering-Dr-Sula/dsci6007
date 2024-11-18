@@ -7,6 +7,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import {useEffect, useState} from 'react';
+import getS3Objects from "@/app/util/listS3Objects";
 
 export default function CourseWork() {
 
