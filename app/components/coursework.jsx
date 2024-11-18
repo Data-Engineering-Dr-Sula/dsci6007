@@ -19,21 +19,18 @@ export default function CourseWork() {
         getFiles();
     }, []);
 
-    const getFiles = (currentFolder) => {
-        let uri = currentFolder ? `/api/listFiles?folder=${encodeURIComponent(currentFolder)}`
-            : '/api/listFiles'
-        fetch(uri)
-            .then((res) => res.json())
+    const getFiles = (currentFolder = "") => {
+        getS3Objects(encodeURIComponent(currentFolder))
             .then((data) => {
                 console.log('Data', data)
                 if (currentFolder) {
                     setSubItems(prevState => ({
                         ...prevState,
-                        [currentFolder]: data.items?.filter((item) => item.name !== currentFolder + '/')
-                            .map(item => ({...item, name: item.name.split(currentFolder + '/')[1]}))
+                        [currentFolder]: data?.filter((item) => item.name !== currentFolder + '/')
+                            .map(item => ({...item, name: item.name.split(currentFolder + '/')[1] }))
                     }));
                 } else {
-                    setItems(data.items ?? [])
+                    setItems(data ?? [])
                 }
             })
             .catch((err) => setError('Failed to fetch S3 files'));
