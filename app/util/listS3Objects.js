@@ -10,6 +10,7 @@ const s3 = new S3Client({
 const bucketName = process.env.NEXT_PUBLIC_S3_BUCKET_NAME;
 
 export default async function getS3Objects(folderPath =  '') {
+    console.log(bucketName)
     try {
         const params = {
             Bucket: bucketName,
