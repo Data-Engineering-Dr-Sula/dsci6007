@@ -36,6 +36,7 @@ jobs:
           gh issue --repo ${{ github.repository }} \
             create --title "Issue title" --body "Issue body"
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_PUBLIC_AWS_REGION: ${{ secrets.NEXT_PUBLIC_AWS_REGION }}
           NEXT_PUBLIC_AWS_ACCESS_KEY_ID: ${{ secrets.NEXT_PUBLIC_AWS_ACCESS_KEY_ID }}
           NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY: ${{ secrets.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY }}
