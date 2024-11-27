@@ -21,10 +21,11 @@ export default function CourseWork() {
     }, []);
 
     const getFiles = (currentFolder = "") => {
-        console.log(currentFolder)
+        if (!!subItems[currentFolder]) {
+            return;
+        }
         getS3Objects(currentFolder)
             .then((data) => {
-                console.log('Data', data)
                 if (currentFolder) {
                     setSubItems(prevState => ({
                         ...prevState,

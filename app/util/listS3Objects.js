@@ -11,9 +11,6 @@ const bucketName = process.env.NEXT_PUBLIC_S3_BUCKET_NAME;
 
 export default async function getS3Objects(folderPath =  '') {
     try {
-
-
-        console.log("getting data", bucketName)
         const params = {
             Bucket: bucketName,
             Prefix: folderPath ?? '',
@@ -22,7 +19,6 @@ export default async function getS3Objects(folderPath =  '') {
 
         const command = new ListObjectsV2Command(params);
         const response = await s3.send(command);
-        console.log("response", response)
 
         const folders = response.CommonPrefixes?.map((prefix) => ({
             name: prefix.Prefix.slice(0, -1),
@@ -38,7 +34,6 @@ export default async function getS3Objects(folderPath =  '') {
 
         return [...folders, ...files];
     } catch (error) {
-        console.log(error);
         return []
     }
 }
