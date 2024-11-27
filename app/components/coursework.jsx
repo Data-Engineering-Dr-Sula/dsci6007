@@ -21,14 +21,15 @@ export default function CourseWork() {
     }, []);
 
     const getFiles = (currentFolder = "") => {
-        getS3Objects(encodeURIComponent(currentFolder))
+        console.log(currentFolder)
+        getS3Objects(currentFolder)
             .then((data) => {
                 console.log('Data', data)
                 if (currentFolder) {
                     setSubItems(prevState => ({
                         ...prevState,
-                        [currentFolder]: data?.filter((item) => item.name !== currentFolder + '/')
-                            .map(item => ({...item, name: item.name.split(currentFolder + '/')[1] }))
+                        [currentFolder]: data?.filter((item) => item.name !== currentFolder)
+                            .map(item => ({...item, name: item.name.split(currentFolder)[1] }))
                     }));
                 } else {
                     setItems(data ?? [])
@@ -41,10 +42,10 @@ export default function CourseWork() {
         if (folder.isFolder) {
             return (
                 <Accordion type="single" collapsible className="w-full bg-gray-50 px-4">
-                    <AccordionItem value={folder.path} onClick={() => getFiles(folder.name)}>
+                    <AccordionItem value={folder.path} onClick={() => getFiles(folder.path)}>
                         <AccordionTrigger>📂 {folder.name}</AccordionTrigger>
                         <AccordionContent>
-                            {subItems[folder.name]?.length > 0 ? subItems[folder.name]?.map(subItems => getFoldersUI(subItems)) : "empty folder"}
+                            {subItems[folder.path]?.length > 0 ? subItems[folder.path]?.map(subItems => getFoldersUI(subItems)) : "empty folder"}
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
@@ -52,7 +53,7 @@ export default function CourseWork() {
         }
         return (
             <Accordion className="w-full bg-gray-50 px-4">
-                <AccordionItem value={folder.name}>
+                <AccordionItem value= {folder.name}>
                     <AccordionTrigger>
                         <a href={folder.url} target="_blank">📝 {folder.name}</a>
                     </AccordionTrigger>

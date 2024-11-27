@@ -16,7 +16,7 @@ export default async function getS3Objects(folderPath =  '') {
         console.log("getting data", bucketName)
         const params = {
             Bucket: bucketName,
-            Prefix: folderPath ? `${folderPath}/` : '',
+            Prefix: folderPath ?? '',
             Delimiter: '/', // prevents listing nested folders
         };
 
