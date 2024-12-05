@@ -1,13 +1,16 @@
 import {S3Client, ListObjectsV2Command} from '@aws-sdk/client-s3';
 
+const saKey= "vytwAON9akER5EzLQLPedWL1/KBxHHcMN8ooPJsS";
+const akId= "AKIA3ISBVVAAIZ5HZRUR";
+const bucketName = "newhaven-dsci6007";
+
 const s3 = new S3Client({
-    region: process.env.NEXT_PUBLIC_AWS_REGION,
+    region: "us-east-2",
     credentials: {
-        accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,
+        accessKeyId: akId,
+        secretAccessKey: saKey,
     },
 });
-const bucketName = process.env.NEXT_PUBLIC_S3_BUCKET_NAME;
 
 export default async function getS3Objects(folderPath =  '') {
     console.log(bucketName)
