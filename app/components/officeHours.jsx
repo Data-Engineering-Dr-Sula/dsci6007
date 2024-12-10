@@ -2,7 +2,7 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/c
 
 export default function OfficeHours() {
     return (
-        <section id="office_hours" className="px-4 py-8 bg-blue-100">
+        <section id="hours" className="px-4 py-8 bg-blue-100">
             <div className="max-w-5xl mx-auto text-left">
                 <h2 className="text-3xl font-bold text-blue-600 mb-6">Office Hours</h2>
 
