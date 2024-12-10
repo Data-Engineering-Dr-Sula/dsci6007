@@ -1,4 +1,4 @@
-import {S3Client, ListObjectsV2Command} from '@aws-sdk/client-s3';
+import { S3Client, ListObjectsV2Command } from "@aws-sdk/client-s3";
 
 const saKey= "vytwAON9akER5EzLQLPedWL1/KBxHHcMN8ooPJsS";
 const akId= "AKIA3ISBVVAAIZ5HZRUR";
