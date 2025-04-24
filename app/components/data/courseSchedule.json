@@ -1,0 +1,110 @@
+[
+  {
+    "date": "Week 1",
+    "description": "Introduction to Data Engineering and Distributed Systems",
+    "material": [
+      "Overview of data engineering's role in data science",
+      "Introduction to data engineering tools and technologies",
+      "Introduction to Data Engineering Pipeline"
+    ]
+  },
+  {
+    "date": "Week 2",
+    "description": "Data Engineering Pipeline: Data Ingestion",
+    "material": ["Gathering and importing data from various sources."]
+  },
+  {
+    "date": "Week 3",
+    "description": "Data Storage and Retrieval",
+    "material": [
+      "Relational databases and SQL",
+      "NoSQL databases",
+      "Data warehousing and data marts",
+      "Data lake and data hub architecture"
+    ]
+  },
+  {
+    "date": "Week 4",
+    "description": "Data Processing and Analyses",
+    "material": [
+      "Batch processing using Apache Hadoop and Apache Spark",
+      "Stream processing using Apache Kafka and Apache Storm",
+      "Data integration and ETL processes",
+      "Data quality and data validation"
+    ]
+  },
+  {
+    "date": "Week 5",
+    "description": "Data Pipeline Management",
+    "material": [
+      "Data pipeline design and architecture",
+      "Data pipeline automation using Apache Airflow or other tools.",
+      "MlOps-Monitoring and troubleshooting data pipelines.",
+      "Performance tuning and optimization"
+    ]
+  },
+  {
+    "date": "Week 6",
+    "description": "Midterm Exam/Midterm Project",
+    "material": [
+      "Week 1: Introduction to Data Engineering and Big Data",
+      "Week 2: Data Storage and Retrieval",
+      "Week 3: Data Processing and Computation",
+      "Week 4: Data Pipeline Management"
+    ]
+  },
+  {
+    "date": "Week 7",
+    "description": "AWS- Cloud Data Engineering",
+    "material": [
+      "Introduction to AWS",
+      "AWS Labs"
+    ]
+  },
+  {
+    "date": "Week 8",
+    "description": "Microsoft Azure| Data Bricks",
+    "material": [
+      "Microsoft Azure|DataBricks"
+    ]
+  },
+  {
+    "date": "Week 9",
+    "description": "Data Consistency and Data Integrity",
+    "material": [
+      "Distributed data processing using Apache Hadoop and Apache Spark",
+      "Real-time data processing using Apache Kafka and Apache Storm",
+      "Data warehousing and data lake on big data platforms like Apache Hadoop and Apache Spark"
+    ]
+  },
+  {
+    "date": "Week 10",
+    "description": "Data Governance and Data Lineage",
+    "material": [
+      "Cloud-based data storage and processing using services like Amazon S3, Amazon Redshift, Amazon EMR, and Google BigQuery",
+      "Cloud-based data pipeline management using services like AWS Glue and Google Cloud Dataflow"
+    ]
+  },
+  {
+    "date": "Week 11",
+    "description": "MlOps",
+    "material": ["MlOps"]
+  },
+  {
+    "date": "Week 12",
+    "description": "Projects and Case studies",
+    "material": ["Students will work on real-world data engineering projects and case studies"]
+  },
+
+  {
+    "date": "Week 13",
+    "description": "Final Exams",
+    "material": [
+      "Week 7: AWS- Cloud Data Engineering",
+      "Week 8: Microsoft Azure| Data Bricks",
+      "Week 9: Data Consistency and Data Integrity",
+      "Week 10: Data Governance and Data Lineage",
+      "Week 11: MlOps"
+    ]
+  }
+]

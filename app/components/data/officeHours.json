@@ -1,0 +1,56 @@
+{
+  "title": "Office Hours",
+  "professor": {
+    "name": "Dr. Ardiana Sula",
+    "appointmentsEmail": "asula@newhaven.edu",
+    "inPersonLocation": "Maxy Hall 120 A",
+    "schedule": [
+      {
+        "day": "Tuesdays",
+        "time": "10:00 AM - 11:30 AM",
+        "type": "Online",
+        "location": {
+          "text": "Zoom Link",
+          "url": "https://unewhaven.zoom.us/j/9927253081"
+        }
+      },
+      {
+        "day": "Thursdays",
+        "time": "10:00 AM - 11:30 AM",
+        "type": "Online",
+        "location": {
+          "text": "Zoom Link",
+          "url": "https://unewhaven.zoom.us/j/9927253081"
+        }
+      }
+    ]
+  },
+  "ta": {
+    "name": "Akash Thakkar",
+    "appointmentsEmail": "athak13@unh.newhaven.edu",
+    "inPersonLocation": "BCKM Hall, Room 232",
+    "schedule": [
+      {
+        "day": "Monday",
+        "time": "12:30 PM - 1:30 PM",
+        "type": "In-person",
+        "location": "BCKM Hall, Room 232"
+      },
+      {
+        "day": "Wednesday",
+        "time": "12:30 PM - 1:30 PM",
+        "type": "In-person",
+        "location": "BCKM Hall, Room 232"
+      },
+      {
+        "day": "Thursday",
+        "time": "7:00 PM - 8:00 PM",
+        "type": "Online",
+        "location": {
+          "text": "Zoom Link",
+          "url": "https://unewhaven.zoom.us/j/zoomlink"
+        }
+      }
+    ]
+  }
+}

@@ -1,13 +1,35 @@
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
+import officeHours from "./data/officeHours.json";
 
 export default function OfficeHours() {
+    const { title, professor, ta } = officeHours;
+
+    const renderSchedule = (schedule) =>
+        schedule.map((slot, index) => (
+            <TableRow key={index}>
+                <TableCell>{slot.day}</TableCell>
+                <TableCell>{slot.time}</TableCell>
+                <TableCell>{slot.type}</TableCell>
+                <TableCell>
+                    {typeof slot.location === "string" ? (
+                        slot.location
+                    ) : (
+                        <a href={slot.location.url} className="text-blue-500 hover:underline">
+                            {slot.location.text}
+                        </a>
+                    )}
+                </TableCell>
+            </TableRow>
+        ));
+
     return (
         <section id="office_hours" className="px-4 py-8 bg-blue-100">
             <div className="max-w-5xl mx-auto text-left">
-                <h2 className="text-3xl font-bold text-blue-600 mb-6">Office Hours</h2>
+                <h2 className="text-3xl font-bold text-blue-600 mb-6">{title}</h2>
 
+                {/* Professor */}
                 <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-blue-600 mb-2">Professor: Dr. Ardiana Sula</h3>
+                    <h3 className="text-xl font-semibold text-blue-600 mb-2">Professor: {professor.name}</h3>
                     <Table className="w-full bg-white shadow-md rounded-lg overflow-hidden">
                         <TableHeader>
                             <TableRow>
@@ -17,32 +39,21 @@ export default function OfficeHours() {
                                 <TableHead>Location</TableHead>
                             </TableRow>
                         </TableHeader>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>Tuesdays</TableCell>
-                                <TableCell>10:00 AM - 11:30 AM</TableCell>
-                                <TableCell>Online</TableCell>
-                                <TableCell><a href="https://unewhaven.zoom.us/j/9927253081"
-                                              className="text-blue-500 hover:underline">Zoom Link</a></TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>Thursdays</TableCell>
-                                <TableCell>10:00 AM - 11:30 AM</TableCell>
-                                <TableCell>Online</TableCell>
-                                <TableCell><a href="https://unewhaven.zoom.us/j/9927253081"
-                                              className="text-blue-500 hover:underline">Zoom Link</a></TableCell>
-                            </TableRow>
-                        </TableBody>
+                        <TableBody>{renderSchedule(professor.schedule)}</TableBody>
                     </Table>
                     <p className="mt-4 text-gray-700">
-                        For appointments, contact <a href="mailto:asula@newhaven.edu"
-                                                     className="text-blue-500 hover:underline">asula@newhaven.edu</a>. <br/>
-                        Location (In-person): Maxy Hall 120 A
+                        For appointments, contact{" "}
+                        <a href={`mailto:${professor.appointmentsEmail}`} className="text-blue-500 hover:underline">
+                            {professor.appointmentsEmail}
+                        </a>
+                        . <br />
+                        Location (In-person): {professor.inPersonLocation}
                     </p>
                 </div>
 
+                {/* TA */}
                 <div>
-                    <h3 className="text-xl font-semibold text-blue-600 mb-2">Teaching Assistant: Akash Thakkar</h3>
+                    <h3 className="text-xl font-semibold text-blue-600 mb-2">Teaching Assistant: {ta.name}</h3>
                     <Table className="w-full bg-white shadow-md rounded-lg overflow-hidden">
                         <TableHeader>
                             <TableRow>
@@ -52,32 +63,15 @@ export default function OfficeHours() {
                                 <TableHead>Location</TableHead>
                             </TableRow>
                         </TableHeader>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>Monday</TableCell>
-                                <TableCell>12:30 PM - 1:30 PM</TableCell>
-                                <TableCell>In-person</TableCell>
-                                <TableCell>BCKM Hall, Room 232</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>Wednesday</TableCell>
-                                <TableCell>12:30 PM - 1:30 PM</TableCell>
-                                <TableCell>In-person</TableCell>
-                                <TableCell>BCKM Hall, Room 232</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>Thursday</TableCell>
-                                <TableCell>7:00 PM - 8:00 PM</TableCell>
-                                <TableCell>Online</TableCell>
-                                <TableCell><a href="https://unewhaven.zoom.us/j/zoomlink"
-                                              className="text-blue-500 hover:underline">Zoom Link</a></TableCell>
-                            </TableRow>
-                        </TableBody>
+                        <TableBody>{renderSchedule(ta.schedule)}</TableBody>
                     </Table>
                     <p className="mt-4 text-gray-700">
-                        For appointments, contact <a href="mailto:athak13@unh.newhaven.edu"
-                                                     className="text-blue-500 hover:underline">athak13@unh.newhaven.edu</a>. <br/>
-                        Location (In-person): BCKM Hall, Room 232
+                        For appointments, contact{" "}
+                        <a href={`mailto:${ta.appointmentsEmail}`} className="text-blue-500 hover:underline">
+                            {ta.appointmentsEmail}
+                        </a>
+                        . <br />
+                        Location (In-person): {ta.inPersonLocation}
                     </p>
                 </div>
             </div>

@@ -1,106 +1,76 @@
 import {Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-
-const grading_category = [
-    {
-        category: "Labs",
-        component: "Labs",
-        percentage: "40%"
-    },
-    {
-        category: "Platforms",
-        component: "AWS Platform",
-        percentage: "5%"
-    },
-    {
-        category: "Projects",
-        component: "MidTerm Project",
-        percentage: "5%"
-    },
-    {
-        category: "",
-        component: "Final Project",
-        percentage: "10%"
-    },
-    {
-        category: "Exams",
-        component: "MidTerm Exam",
-        percentage: "5%"
-    },
-    {
-        category: "",
-        component: "Final Exam",
-        percentage: "10%"
-    },
-    {
-        category: "Quizzes",
-        component: "Quizzes",
-        percentage: "10%"
-    },
-    {
-        category: "Certifications",
-        component: "Certifications",
-        percentage: "5%"
-    },
-    {
-        category: "Attendance",
-        component: "Class Attendance + TA Labs Attendance",
-        percentage: "10%"
-    }
-]
+import grading_category from "./data/gradingCategories.json"
+import course from "./data/Course.json"
+import teamMembers from "./data/team.json"
 
 export default function CourseDescription() {
+
+    const TeamMemberCard = ({ member, role }) => (
+        <div className="flex flex-col items-center text-center">
+            <img src={member.imageUrl} alt={member.name} className="w-24 h-24 rounded-full mb-4" />
+            <h3 className="text-xl font-semibold text-blue-600">{member.name}</h3>
+            <p className="text-gray-700">{role}</p>
+            <p className="text-gray-500">{member.major}</p>
+            <a href={`mailto:${member.email}`} className="text-blue-500 mt-2">{member.email}</a>
+        </div>
+    );
+
     return (
         <section id="course_description" className="px-4 py-8">
             <div className="max-w-5xl mx-auto text-left">
-                <h2 className="text-3xl font-bold text-blue-600 mb-4">Course Description</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                    This course delves into the complex world of 'Big Data' infrastructure and architecture, with a
-                    focus on leveraging computing resources and programming environments to develop scalable,
-                    high-volume distributed machine learning algorithms...
-                </p>
+                <h2 className="text-3xl font-bold text-blue-600 mb-4">{course.title}</h2>
 
-                <p className="text-gray-700 leading-relaxed mb-6">
-                    Throughout the course, students will be immersed in an intensive exploration of distributed and
-                    scalable data engineering. Key subjects such as the big data ecosystem, cloud computing, and various
-                    data storage and processing methodologies will be covered. There will be a strong emphasis on
-                    contemporary data engineering tools and techniques, equipping students with the know-how to navigate
-                    and excel in the dynamic landscape of data engineering.
-                </p>
+                {course.description.map((para, idx) => (
+                    <p key={idx} className="text-gray-700 leading-relaxed mb-6">{para}</p>
+                ))}
+                <h2 className="text-xl font-semibold text-blue-600 mb-2">Meet the Team</h2>
+
+                <div className="max-w-5xl mx-auto text-center py-8">
+
+                    <div className="flex justify-around gap-8">
+                        <div>
+                            <TeamMemberCard member={teamMembers.professor} role={teamMembers.professor.designation}/>
+                        </div>
+
+                        <div>
+                            {/*<h4 className="text-xl font-semibold text-gray-800 mb-4">{teamMembers.teachingAssistants.title}</h4>*/}
+                            <div className="flex flex-col gap-4">
+                                {teamMembers.teachingAssistants.assistants.map((ta, index) => (
+                                    <TeamMemberCard key={index} member={ta} role="TA"/>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div>
+                            {/*<h4 className="text-xl font-semibold text-gray-800 mb-4">{teamMembers.volunteerTAs.title}</h4>*/}
+                            <div className="flex flex-col gap-4">
+                                {teamMembers.volunteerTAs.assistants.map((vta, index) => (
+                                    <TeamMemberCard key={index} member={vta} role="Volunteer TA"/>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <h3 className="text-xl font-semibold text-blue-600 mb-2">Prerequisites</h3>
-                <p className="text-gray-700 mb-6">
-                    No formal prerequisites; familiarity with probability, linear algebra, calculus, and some
-                    object-oriented programming language is recommended.
-                </p>
+                <p className="text-gray-700 mb-6">{course.prerequisites}</p>
+
                 <h3 className="text-xl font-semibold text-blue-600 mb-2">Course Materials</h3>
                 <ul className="list-disc list-inside text-gray-700 mb-6 px-8">
-                    <li><strong>Required:</strong> None. Data Engineering is a new and evolving field with no
-                        comprehensive current book. Readings will be video tutorials, book chapters, and blog posts
-                        provided on Canvas.
-                    </li>
-                    <li><strong>Suggested:</strong> Various supplementary books, including "The Data Engineering
-                        Cookbook" by Andreas Kretz, "Designing Data-Intensive Applications" by Martin Kleppmann, and
-                        more.
-                    </li>
+                    <li><strong>Required:</strong> {course.courseMaterials.required}</li>
+                    <li><strong>Suggested:</strong> {course.courseMaterials.suggested}</li>
                 </ul>
+
                 <h3 className="text-xl font-semibold text-blue-600 mb-2">Additional Materials</h3>
                 <ul className="list-disc list-inside text-gray-700 mb-6 px-8">
-                    <li>Supplementary readings and online resources, including case studies and current industry
-                        reports.
-                    </li>
-                    <li>A laptop capable of running an Ubuntu 20.04 Virtual Machine on VirtualBox is needed for
-                        projects.
-                    </li>
-                    <li>Cloud-based exercises via Amazon AWS through a free AWS Academy account provided to students.
-                    </li>
-                    <li>Software requirements: Python, SQL, NoSQL databases, AWS, Microsoft Azure, among others.</li>
+                    {course.additionalMaterials.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                    ))}
                 </ul>
 
                 <h3 className="text-xl font-semibold text-blue-600 mb-4">Category Weights & Grading</h3>
-                <p className="text-gray-700 mb-4">
-                    Grades earned are based on your performance on homework/quizzes, projects, attendance,
-                    participation, midterm exams, and the final exam. Due dates for projects and assignments are posted
-                    in the syllabus.
-                </p>
+                <p className="text-gray-700 mb-4">{course.grading}</p>
 
                 <Table className="w-6/12 bg-gray-50 shadow-md rounded-lg overflow-hidden">
                     <TableHeader>

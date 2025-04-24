@@ -1,0 +1,47 @@
+[
+  {
+    "category": "Labs",
+    "component": "Labs",
+    "percentage": "40%"
+  },
+  {
+    "category": "Platforms",
+    "component": "AWS Platform",
+    "percentage": "5%"
+  },
+  {
+    "category": "Projects",
+    "component": "MidTerm Project",
+    "percentage": "5%"
+  },
+  {
+    "category": "",
+    "component": "Final Project",
+    "percentage": "10%"
+  },
+  {
+    "category": "Exams",
+    "component": "MidTerm Exam",
+    "percentage": "5%"
+  },
+  {
+    "category": "",
+    "component": "Final Exam",
+    "percentage": "10%"
+  },
+  {
+    "category": "Quizzes",
+    "component": "Quizzes",
+    "percentage": "10%"
+  },
+  {
+    "category": "Certifications",
+    "component": "Certifications",
+    "percentage": "5%"
+  },
+  {
+    "category": "Attendance",
+    "component": "Class Attendance + TA Labs Attendance",
+    "percentage": "10%"
+  }
+]

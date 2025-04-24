@@ -1,0 +1,19 @@
+{
+  "title": "Course Description",
+  "description": [
+    "This course delves into the complex world of 'Big Data' infrastructure and architecture, with a focus on leveraging computing resources and programming environments to develop scalable, high-volume distributed machine learning algorithms...",
+    "Throughout the course, students will be immersed in an intensive exploration of distributed and scalable data engineering. Key subjects such as the big data ecosystem, cloud computing, and various data storage and processing methodologies will be covered. There will be a strong emphasis on contemporary data engineering tools and techniques, equipping students with the know-how to navigate and excel in the dynamic landscape of data engineering."
+  ],
+  "prerequisites": "No formal prerequisites; familiarity with probability, linear algebra, calculus, and some object-oriented programming language is recommended.",
+  "courseMaterials": {
+    "required": "None. Data Engineering is a new and evolving field with no comprehensive current book. Readings will be video tutorials, book chapters, and blog posts provided on Canvas.",
+    "suggested": "Various supplementary books, including 'The Data Engineering Cookbook' by Andreas Kretz, 'Designing Data-Intensive Applications' by Martin Kleppmann, and more."
+  },
+  "additionalMaterials": [
+    "Supplementary readings and online resources, including case studies and current industry reports.",
+    "A laptop capable of running an Ubuntu 20.04 Virtual Machine on VirtualBox is needed for projects.",
+    "Cloud-based exercises via Amazon AWS through a free AWS Academy account provided to students.",
+    "Software requirements: Python, SQL, NoSQL databases, AWS, Microsoft Azure, among others."
+  ],
+  "grading": "Grades earned are based on your performance on homework/quizzes, projects, attendance, participation, midterm exams, and the final exam. Due dates for projects and assignments are posted in the syllabus."
+}

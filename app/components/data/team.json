@@ -1,0 +1,31 @@
+{
+  "professor": {
+    "name": "Dr. Ardiana Sula",
+    "email": "asula@newhaven.edu",
+    "major": "Data Science & Computer Science",
+    "designation": "Senior Lecturer",
+    "imageUrl": "https://www.newhaven.edu/_resources/images/faculty-staff-headshots/ardiana-sula.jpg"
+  },
+  "teachingAssistants": {
+    "title": "TAs",
+    "assistants": [
+      {
+        "name": "Akash Thakkar",
+        "email": "athak13@unh.newhaven.edu",
+        "major": "Data Science",
+        "imageUrl": "akash.png"
+      }
+    ]
+  },
+  "volunteerTAs": {
+    "title": "Volunteer TAs",
+    "assistants": [
+      {
+        "name": "Dipesh Mainali",
+        "email": "dmain2@unh.newhaven.edu",
+        "major": "Data Science",
+        "imageUrl": "dipesh.png"
+      }
+    ]
+  }
+}

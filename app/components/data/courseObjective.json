@@ -1,0 +1,15 @@
+{
+  "schedule": {
+    "title": "Schedule",
+    "description": "Class slides (and instructor’s notes if given) do not replace class. If they are provided it is with the intention of freeing up your time to take additional notes, not to allow you to minimize effort. Mathematical topics are difficult to teach via slides, so often specific topics will be demonstrated or derived on the board, requiring notetaking. This is a contrast with programming topics which often work better via slides. Those with a computer science background may need to relearn note taking habits.",
+    "courseStructureTitle": "COURSE STRUCTURE/COURSE FORMAT/COURSE OBJECTIVES:",
+    "courseStructurePoints": [
+      "The course combines lectures, hands-on lab projects (individual and group), and active learning activities.",
+      "Understand the fundamentals of distributed systems and scalable data processing.",
+      "Gain proficiency in big data technologies and cloud-based data engineering solutions.",
+      "Develop skills in designing, implementing, and managing large-scale data pipelines.",
+      "Learn best practices in data governance, integrity, and ethical considerations.",
+      "Active learning, including peer-based and project-based activities, will constitute a significant portion of class time, emphasizing attendance and participation."
+    ]
+  }
+}
