@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DSCI 6007 Course Portal
 
-## Getting Started
+## 🌟 Overview
 
-First, run the development server:
+The **DSCI 6007 Course Portal** is a centralized, web-based platform designed to provide students and instructors with streamlined access to essential course components. It offers:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+* **Course Description & Learning Objectives:** Foundational context for the course.
+
+* **Weekly Academic Schedules:** Important dates and lecture topics.
+
+* **Instructor & TA Office Hours:** Information on academic support availability.
+
+* **Dynamically Updated Course Materials:** Real-time access to files hosted on AWS S3, reducing manual updates.
+
+Built using modern JavaScript frameworks and hosted on GitHub Pages, the portal emphasizes ease of access, mobile responsiveness, and real-time content availability through seamless integration with Amazon S3.
+
+## 🚀 Live Demo
+
+Experience the portal live at:
+<https://data-engineering-dr-sula.github.io/dsci6007/>
+
+## ✨ Key Features
+
+* **Publicly Accessible:** No login credentials required.
+
+* **Mobile Responsive:** Optimized for various devices (desktop, tablet, mobile).
+
+* **Dynamic S3 Integration:** Fetches and displays course files directly from an AWS S3 bucket, ensuring content is always up-to-date.
+
+* **Intuitive Navigation:** Easy access to all sections via a fixed header navigation.
+
+## 🛠️ Technical Stack
+
+* **Frontend:** JavaScript/React
+
+* **Hosting:** GitHub Pages
+
+* **Storage:** AWS S3 (public-read bucket for course materials)
+
+* **AWS Integration:** AWS SDK for JavaScript (v3) for S3 file listing.
+
+## 📦 Getting Started (For Developers)
+
+To set up and run the project locally, or to contribute:
+
+### Prerequisites
+
+* Node.js (LTS version recommended)
+
+* npm (Node Package Manager)
+
+### Installation
+
+1. **Clone the repository:**
+
+``` bash
+git clone https://github.com/Data-Engineering-Dr-Sula/dsci6007.git
+cd dsci6007
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Local Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To start the development server:
+``` bash
+npm run dev
+```
 
-## Learn More
+This will open the application in your browser, typically at `http://localhost:3000`.
 
-To learn more about Next.js, take a look at the following resources:
+### Deployment to GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project is configured for continuous deployment via GitHub Pages. Deployment is automatically triggered on new commits pushed to the `main` branch, which then builds and serves the site.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Ensure `homepage` field is configured in `package.json`:**
 
-## Deploy on Vercel
+"homepage": "https://data-engineering-dr-sula.github.io/dsci6007"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is crucial for paths to resolve correctly on GitHub Pages.
+
+To deploy updates, simply push your changes to the `main` branch. GitHub Actions (if configured) or GitHub Pages' built-in automation will handle the build and deployment process. If you prefer manual deployment or are using a different branch, ensure the contents of your `build` directory are pushed to the `gh-pages` branch or the `docs/` directory of your `main` branch.
+
+## 🔒 Security Considerations
+
+* **AWS S3 Permissions:** The S3 bucket (`dsci6007site`) is configured for public read-only access. Write permissions are restricted via IAM policies.
+
+* **Access Credentials:** AWS credentials are stored securely on the server side (environment variables) and *never* exposed in frontend JavaScript code.
+
+* **No Upload Functionality:** The frontend does not expose any file upload functionality, preventing unauthorized content injection.
+
+## 📞 Support and Contact
+
+For questions, technical assistance, or to report an issue, please reach out to the project maintainer:
+
+* **Maintainer:** Dipesh Mainali
+
+* **Email:** dmain2@unh.newhaven.edu
+
+* **Affiliation:** University of New Haven, Data Science Program
+
+Feedback, suggestions, or contributions are always welcome!
