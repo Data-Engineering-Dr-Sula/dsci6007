@@ -31,7 +31,7 @@ Experience the portal live at:
 
 ## 🛠️ Technical Stack
 
-* **Frontend:** JavaScript/React
+* **Frontend:** NextJS
 
 * **Hosting:** GitHub Pages
 
